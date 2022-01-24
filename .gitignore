@@ -1,0 +1,12 @@
+node_modules
+config.json
+test.config.json
+deploy.config.json
+token.json
+db.json
+.vscode
+.idea
+.DS_Store
+/dist
+/scripts
+notes.txt

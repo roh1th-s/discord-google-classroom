@@ -1,0 +1,48 @@
+{
+  "subjects": {
+    "Monday": [
+      "Physics",
+      "Elective",
+      "Maths",
+      "Chemistry",
+      "Chemistry",
+      "English language"
+    ],
+    "Tuesday": ["Elective", "Elective", "Maths", "Maths", "Physics", "Physics"],
+    "Wednesday": [
+      "English language",
+      "Elective",
+      "Maths",
+      "Physics",
+      "Chemistry",
+      "English literature"
+    ],
+    "Thursday": [
+      "Maths",
+      "Elective",
+      "Scripture",
+      "Chemistry",
+      "Chemistry",
+      "English literature"
+    ],
+    "Friday": [
+      "Physics",
+      "Elective",
+      "English literature",
+      "Chemistry",
+      "Maths",
+      "Physics"
+    ]
+  },
+  "timings": [
+    "8:25",
+    "9:05",
+    "9:45",
+    "10:05",
+    "10:45",
+    "11:25",
+    "11:40",
+    "12:20",
+    "13:00"
+  ]
+}
