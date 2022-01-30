@@ -1,7 +1,9 @@
-import { Message, MessageEmbed } from "discord.js";
+import { Message } from "discord.js";
 import { readdirSync } from "fs";
 import { IConfig } from "../config";
+import { errorEmbed } from "../utils/embedUtil";
 import IBot from "./IBot";
+import { join } from "path";
 import { CommandContext, ICommand } from "./ICommand";
 
 export default class CommandHandler {
@@ -15,17 +17,18 @@ export default class CommandHandler {
 
   public initializeCommands() {
     const bot = this.bot
-    const commandFiles = readdirSync("./src/commands").filter((file) =>
-      file.endsWith(".ts")
+    const commandFiles = readdirSync(join(__dirname, "..", "commands")).filter((file) =>
+      file.endsWith(".js") || (file.endsWith(".ts") && !file.endsWith(".d.ts"))
     );
+   
     for (const file of commandFiles) {
-      let commandClass = require(`./commands/${file}`);
+      let commandClass = require(`../commands/${file}`);
       if (commandClass.prototype && commandClass.prototype.constructor) {
         let command: ICommand = new commandClass(bot);
-        bot.commands.set(command.name, command);
+        bot.commands.set(command.name.toLowerCase(), command);
         if (command.aliases.length > 0) {
           for (let alias of command.aliases) {
-            bot.aliases.set(alias, command);
+            bot.aliases.set(alias.toLowerCase(), command);
           }
         }
       }
@@ -60,9 +63,7 @@ export default class CommandHandler {
         console.log(err);
 
         msg.reply(
-          new MessageEmbed()
-            .setTitle("Something went wrong")
-            .setDescription("Please try again.")
+          errorEmbed("Something went wrong", "Please try again.")
         );
       }
     }

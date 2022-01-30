@@ -1,5 +1,6 @@
-import { Client, MessageEmbed } from "discord.js";
+import { Client } from "discord.js";
 import { ICommand, CommandContext } from "../lib/ICommand";
+import { simpleEmbed } from "../utils/embedUtil";
 
 class Timetable implements ICommand {
   client: Client;
@@ -22,12 +23,11 @@ class Timetable implements ICommand {
     const correctUsage = `\`${prefix}${this.usage}\``;
 
     return msg.reply(
-      new MessageEmbed()
-        .setTitle("11 Science Class timetable")
-        .setImage(
-          "https://drive.google.com/uc?export=view&id=1DJf8wzjWRImJL8r70IDNpryXPikdk3Hw"
-        )
-        .setTimestamp()
+      simpleEmbed("11 Science Class timetable")
+      .setImage(
+        "https://drive.google.com/uc?export=view&id=1DJf8wzjWRImJL8r70IDNpryXPikdk3Hw"
+      )
+      .setTimestamp()
     );
   }
 }

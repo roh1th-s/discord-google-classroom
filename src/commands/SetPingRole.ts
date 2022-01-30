@@ -2,6 +2,7 @@ import { Client } from "discord.js";
 import { ICommand, CommandContext } from "../lib/ICommand";
 import * as fs from "fs";
 import { resolve } from "path";
+import { successEmbed } from "../utils/embedUtil";
 
 const CONFIG_PATH = resolve(__dirname, "../..", "config.json");
 
@@ -40,8 +41,8 @@ class SetPingRole implements ICommand {
 			  ctx.cfg.bot.pingRole = role.id;
 	
 			  fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4));
-	
-			  return msg.reply(`<@&${role.id}> will be pinged for updates.`);
+			  
+			  return msg.reply(successEmbed("Settings updated",`<@&${role.id}> will be pinged for updates.`));
 			}
 		  }
     }

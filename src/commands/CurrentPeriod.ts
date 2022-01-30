@@ -1,14 +1,12 @@
-import { Client, MessageEmbed } from "discord.js";
+import { Client } from "discord.js";
 import { ICommand, CommandContext } from "../lib/ICommand";
-import { getCurrentTime, timeStringToMinutes } from "../utils/timeUtils";
-
-const timetable = require("../../data/timetable.json")
-const timings = timetable.timings;
+import { simpleEmbed } from "../utils/embedUtil";
+import { getPeriod, PERIOD_ERROR_TYPE, Period } from "../utils/timetableUtil";
 
 class CurrentPeriod implements ICommand{
 	client: Client;
 	name = "currentperiod";
-	aliases = ["periodnow"];
+	aliases = ["period", "now"];
 	description = "See what period is currently going on.";
 	usage = "periodnow";
 
@@ -23,46 +21,37 @@ class CurrentPeriod implements ICommand{
 		const args = ctx.args;
 		const correctUsage = `\`${prefix}${this.usage}\``;
 
-		// returns "<day> hh:mm PM"
-		let timeString = getCurrentTime(cfg.bot.timezone || "Asia/Kolkata");
-		let timeParts = timeString.split(" ")
+		let [success, period] = getPeriod(cfg.bot.timezone)
 
-		let day = timeParts[0];
-		let hhmm = timeParts[1].split(":")
-		let hours = hhmm[0]
-		let currentTimeInMinutes = timeStringToMinutes(timeParts[1]);
+		if (success) {
+			period = <Period>period;
 
-		let subjectsForDay = timetable.subjects[day];
+			//if the link field is an object (not a string), then it's elective
+			const isElective = typeof(period.link) != "string";
+			let linkInfo = `[Click to join](${period.link})`;
 
-		if(!subjectsForDay)
-			return msg.reply("No classes scheduled for today.")
+			if (isElective) {
+				linkInfo = ""
+				for (let subject in <object>period.link) {
+					linkInfo += `[${subject}](${(period.link as any)[subject]})\n`
+				}
+			}
+			const periodEmbed = simpleEmbed(
+				period.isSubject ? `Current period : ${period.name}` : `${period.name} is going on.`,
+				`Start time : \`${period.startTime}\`\tEnd time : \`${period.endTime}\``,	
+			)
+			if (period.link != "")
+				periodEmbed.addField(`Link${isElective ? "s" : ""}`, linkInfo)
 
-		// if(hour == 8 && minutes <= 25){
-		// 	return msg.reply("The morning assembly is going on")
-		// }
-		// else if(hour ) {
-
-		// }
-
-		let subjectIndex
-
-		for(let i = 0; i < timings.length; i++) {
-			const timing = timings[i];
-			const nextTiming = timings[i + 1];
-
-			if (nextTiming) {
-				//convert time from hh:mm format into minutes
-				const minutes = timeStringToMinutes(timing);
-
-				subjectIndex = i;
-
-			} else {
-				return msg.reply(new MessageEmbed().setTitle("No classes scheduled for now."))
+			msg.channel.send(periodEmbed);
+		} else {
+			if (period == PERIOD_ERROR_TYPE.NONE_SCHEDULED_NOW) {
+				return msg.reply(simpleEmbed(`No classes are scheduled for now.`));
+			}
+			else if (period == PERIOD_ERROR_TYPE.NONE_SCHEDULED_TODAY) {
+				msg.channel.send(simpleEmbed(`No classes are scheduled for today.`));
 			}
 		}
-
-        console.log(timeString);
-		
     }
 }
 

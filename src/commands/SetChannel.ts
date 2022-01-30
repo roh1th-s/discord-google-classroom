@@ -2,6 +2,7 @@ import { ICommand, CommandContext } from "../lib/ICommand";
 import { resolve } from "path";
 import * as fs from "fs";
 import { Client } from "discord.js";
+import { errorEmbed, successEmbed } from "../utils/embedUtil";
 
 const CONFIG_PATH = resolve(__dirname, "../..", "config.json");
 
@@ -44,9 +45,9 @@ class SetChannel implements ICommand {
 
         fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4));
 
-        return msg.reply(`<#${channel.id}> set as google classroom channel.`);
+        return msg.reply(successEmbed("Settings updated",`<#${channel.id}> set as google classroom channel.`));
       } else {
-        return msg.reply(`Channel not found!`);
+        return msg.reply(errorEmbed("Error",`Channel not found!`));
       }
     }
   }
