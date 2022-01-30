@@ -16,6 +16,7 @@ import {
 
 import { IClassroom } from "./IClassroom";
 import { classroom_v1 as ClassroomAPI } from "googleapis";
+import { simpleEmbed } from "../utils/embedUtil";
 
 const DB_PATH = path.join(__dirname, "../..", "db.json");
 
@@ -62,7 +63,7 @@ const buildEmbed = <Entry extends IGenericEntry>(
   //   : `New ${isCourseWork ? "classwork" : "post"} in classroom`;
 
   const title = isCourseWork
-    ? entry.title
+    ? entry.title || "[No title]"
     : course
     ? `New post in "${course.name}"`
     : `New post in classroom`;
@@ -194,9 +195,7 @@ const buildEmbed = <Entry extends IGenericEntry>(
     });
   }
 
-  const embed = new MessageEmbed();
-  embed.setTitle(title);
-  embed.setDescription(description);
+  const embed = simpleEmbed(title, description);
   embed.setURL(url);
   embed.addFields(fields);
 

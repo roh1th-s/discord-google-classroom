@@ -1,5 +1,5 @@
 export function getCurrentTime(timeZone : string) : string {
-    return new Date().toLocaleDateString('en-US', {timeZone, weekday: 'long', hour : 'numeric', minute : 'numeric'})
+    return new Date().toLocaleDateString('en-US', {timeZone, weekday: 'long', hour : 'numeric', minute : 'numeric', hour12 : false})
 }
 
 export interface BuildDateOpts {
@@ -33,3 +33,4 @@ export function timeStringToMinutes(timeString : string) {
   
   return hours * 60 + minutes;
 }
+
