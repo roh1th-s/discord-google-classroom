@@ -24,7 +24,7 @@ function getPeriodFromTiming(timing: Period, subjectsForDay: string[]): Period {
   let name = timing.name;
   let link = links[name || ""] || "";
 
-  if (timing.isSubject && timing.periodIndex) {
+  if (timing.isSubject && timing.periodIndex != undefined && timing.periodIndex != null) {
     let subjectName = subjectsForDay[timing.periodIndex];
     name = subjectName;
     link = links[subjectName] || links.common;

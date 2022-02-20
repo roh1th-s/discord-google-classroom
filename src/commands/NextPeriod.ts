@@ -32,7 +32,7 @@ class NextPeriod implements ICommand{
 			if (isElective) {
 				linkInfo = ""
 				for (let subject in <object>period.link) {
-					linkInfo += `${subject} : ${(period.link as any)[subject]}\n`
+					linkInfo += `[${subject}](${(period.link as any)[subject]})\n`
 				}
 			}
 
