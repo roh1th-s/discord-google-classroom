@@ -23,9 +23,9 @@ class Timetable implements ICommand {
     const correctUsage = `\`${prefix}${this.usage}\``;
 
     return msg.reply(
-      simpleEmbed("11 Science Class timetable")
+      simpleEmbed("12 Science Class timetable")
       .setImage(
-        "https://media.discordapp.net/attachments/940913580021256212/944950422622306354/CLASS_11_SCI_-_2021_-_Timetable.jpg?width=720&height=309"
+        "https://media.discordapp.net/attachments/836606519998152704/958311199185981480/Class_12_Special_Classes_Timetable.png?width=1008&height=566"
       )
       .setTimestamp()
     );

@@ -446,10 +446,28 @@ const check = async (
   let json: IDatabase;
 
   try {
-    json = JSON.parse(raw);
+    let parsed = JSON.parse(raw);
+    
+    if (Object.keys(parsed).length == 0)
+      json = { announcements: [], courseWork: [], courseWorkMaterial: [] };
+    else 
+      json = parsed;
+      
   } catch (err) {
     console.error(err);
     json = { announcements: [], courseWork: [], courseWorkMaterial: [] };
+  }
+  if (
+    !json.announcements.length &&
+    !json.courseWork.length &&
+    !json.courseWorkMaterial.length
+  ) {
+    updateDB(
+      latestFetchedAnnouncement ? [latestFetchedAnnouncement] : null,
+      latestFetchedCourseWork ? [latestFetchedCourseWork] : null,
+      latestFetchedCourseWorkMaterial ? [latestFetchedCourseWorkMaterial] : null
+    );
+    return;
   }
 
   let newAnnouncements: ClassroomAPI.Schema$Announcement[] = [];

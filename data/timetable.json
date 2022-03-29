@@ -8,7 +8,7 @@
       "Chemistry",
       "English language"
     ],
-    "Tuesday": ["Elective", "Elective", "Maths", "Maths", "Physics", "Physics"],
+    "Tuesday": ["Elective", "Elective", "Maths", "Maths", "Scripture", "Physics"],
     "Wednesday": [
       "English language",
       "Elective",
@@ -20,7 +20,7 @@
     "Thursday": [
       "Maths",
       "Elective",
-      "Scripture",
+      "Physics",
       "Chemistry",
       "Chemistry",
       "English literature"
