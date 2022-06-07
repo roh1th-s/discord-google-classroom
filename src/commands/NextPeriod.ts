@@ -37,7 +37,7 @@ class NextPeriod implements ICommand{
 			}
 
 			const periodEmbed = simpleEmbed(
-				period.isSubject ? `Next period : ${period.name}` : `${period.name} is going on.`,
+				`Next period : ${period.name}`,
 				`Start time : \`${period.startTime}\`\tEnd time : \`${period.endTime}\``,	
 			)
 			if (period.link != "")
