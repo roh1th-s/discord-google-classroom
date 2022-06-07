@@ -526,13 +526,13 @@ const check = async (
     try {
       process.stdout.clearLine(0);
       process.stdout.cursorTo(0);
-      process.stdout.write(`Polled api (x${noOfPolls})`);
+      process.stdout.write(`[GC] Polled api (x${noOfPolls})`);
     } catch (err) {
       console.error(err);
-      console.log("Polled api.");
+      console.log("[GC] Polled api.");
     }
   } else {
-    console.log("Polled api.");
+    console.log("[GC] Polled api.");
   }
 };
 
