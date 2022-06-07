@@ -1,104 +1,56 @@
 {
-  "subjects": {
-    "Monday": [
-      "Physics",
-      "Elective",
-      "Maths",
-      "Chemistry",
-      "Chemistry",
-      "English language"
-    ],
-    "Tuesday": ["Elective", "Elective", "Maths", "Maths", "Scripture", "Physics"],
-    "Wednesday": [
-      "English language",
-      "Elective",
-      "Maths",
-      "Physics",
-      "Chemistry",
-      "English literature"
-    ],
-    "Thursday": [
-      "Maths",
-      "Elective",
-      "Physics",
-      "Chemistry",
-      "Chemistry",
-      "English literature"
-    ],
-    "Friday": [
-      "Physics",
-      "Elective",
-      "English literature",
-      "Chemistry",
-      "Maths",
-      "Physics"
+    "subjects": {
+      "Monday": [
+        "Elective",
+        "Physics"
+      ],
+      "Tuesday": [
+        "Elective",
+        "Physics"
+      ],
+      "Wednesday": [
+        "Elective",
+        "Physics"
+      ],
+      "Thursday": [
+        "Elective",
+        "Physics"
+      ],
+      "Friday": [
+        "Maths",
+        "English literature"
+      ]
+    },
+    "links" : {
+      "The morning assembly" : "https://us02web.zoom.us/j/89191025953",
+      "Scripture" : "https://us02web.zoom.us/j/83602214250?pwd=dFprOFVNT1hqY0V1MXFnMGRzK2JXdz09",
+      "Elective" :  {
+        "Electronics" : "https://us02web.zoom.us/j/5617287072?pwd=OFVUTHJySWRTVnhqZ2NkQVVhNDJQUT09",
+        "Computer science" : "https://us02web.zoom.us/j/82276435365?pwd=bm5WOUNGOEdlVDRZUEFUbTVMWWxaQT09",
+        "Biology" : "https://us02web.zoom.us/j/3648524761?pwd=elZxRXF1dmhDNTE4R0FMT3ErN2Nadz09",
+        "Psychology" : "https://us02web.zoom.us/j/84571715616?pwd=TDF2NGxTWmhPeDhad3dwb2JNNmZzdz09"
+      },
+      "common" : "https://us02web.zoom.us/j/7464883036?pwd=WXhFWEp5WlFBa0RZUVVUQlpDWmlqQT09"
+    },
+    "timings": [
+      {
+        "periodIndex" : 0,
+        "startTime": "08:00",
+        "endTime": "09:30",
+        "isSubject": true
+      },
+      {
+        "name": "Break",
+        "startTime": "09:30",
+        "endTime": "09:45",
+        "isSubject": false
+      },
+      {
+        "periodIndex" : 1,
+        "startTime": "09:45",
+        "endTime": "11:15",
+        "isSubject": true
+      }
     ]
-  },
-  "links" : {
-    "The morning assembly" : "https://us02web.zoom.us/j/89191025953",
-    "Scripture" : "https://us02web.zoom.us/j/83602214250?pwd=dFprOFVNT1hqY0V1MXFnMGRzK2JXdz09",
-    "Elective" :  {
-      "Electronics" : "https://us02web.zoom.us/j/5617287072?pwd=OFVUTHJySWRTVnhqZ2NkQVVhNDJQUT09",
-      "Computer science" : "https://us02web.zoom.us/j/82276435365?pwd=bm5WOUNGOEdlVDRZUEFUbTVMWWxaQT09",
-      "Biology" : "https://us02web.zoom.us/j/3648524761?pwd=elZxRXF1dmhDNTE4R0FMT3ErN2Nadz09",
-      "Psychology" : "https://us02web.zoom.us/j/84571715616?pwd=TDF2NGxTWmhPeDhad3dwb2JNNmZzdz09"
-    },
-    "common" : "https://us02web.zoom.us/j/7464883036?pwd=WXhFWEp5WlFBa0RZUVVUQlpDWmlqQT09"
-  },
-  "timings": [
-    {
-      "name": "The morning assembly",
-      "startTime": "08:00",
-      "endTime": "08:25",
-      "isSubject": false 
-    },
-    {
-      "periodIndex" : 0,
-      "startTime": "08:25",
-      "endTime": "09:05",
-      "isSubject": true
-    },
-    {
-      "periodIndex" : 1,
-      "startTime": "09:05",
-      "endTime": "09:45",
-      "isSubject": true
-    },
-    {
-      "name": "Break 1",
-      "startTime": "09:45",
-      "endTime": "10:05",
-      "isSubject": false
-    },
-    {
-      "periodIndex" : 2,
-      "startTime": "10:05",
-      "endTime": "10:45",
-      "isSubject": true
-    },
-    {
-      "periodIndex" : 3,
-      "startTime": "10:45",
-      "endTime": "11:25",
-      "isSubject": true
-    },
-    {
-      "name": "Break 2",
-      "startTime": "11:25",
-      "endTime": "11:40",
-      "isSubject": false
-    },
-    {
-      "periodIndex" : 4,
-      "startTime": "11:40",
-      "endTime": "12:20",
-      "isSubject": true
-    },
-    {
-      "periodIndex" : 5,
-      "startTime": "12:20",
-      "endTime": "13:00",
-      "isSubject": true
-    }
-  ]
-}
+  }
+  
