@@ -24,7 +24,11 @@ function getPeriodFromTiming(timing: Period, subjectsForDay: string[]): Period {
   let name = timing.name;
   let link = links[name || ""] || "";
 
-  if (timing.isSubject && timing.periodIndex != undefined && timing.periodIndex != null) {
+  if (
+    timing.isSubject &&
+    timing.periodIndex != undefined &&
+    timing.periodIndex != null
+  ) {
     let subjectName = subjectsForDay[timing.periodIndex];
     name = subjectName;
     link = links[subjectName] || links.common;
@@ -43,7 +47,6 @@ export function getPeriod(
   timezone?: string,
   next?: boolean
 ): [boolean, Period | PERIOD_ERROR_TYPE] {
-
   // Returns something like Saturday 12:05
   let timeString = getCurrentTime(timezone || "Asia/Kolkata");
 
@@ -75,6 +78,9 @@ export function getPeriod(
       } else {
         periodNow = getPeriodFromTiming(timing, subjectsForDay);
       }
+      break;
+    } else if (next && i == 0 && timeInMinutes < startTimeInMinutes) {
+      periodNow = getPeriodFromTiming(timing, subjectsForDay);
       break;
     }
   }
