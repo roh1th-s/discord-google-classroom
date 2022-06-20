@@ -1,29 +1,62 @@
 {
     "subjects": {
       "Monday": [
+        "Maths",
+        "Chemistry",
+        "Physics",
+        "English",
+        "P.E",
         "Elective",
-        "Physics"
+        "Elective",
+        "Elective"
       ],
       "Tuesday": [
         "Maths",
-        "English language"
+        "Maths",
+        "Chemistry",
+        "Chemistry",
+        "English",
+        "Physics",
+        "Physics",
+        "Physics"
       ],
       "Wednesday": [
         "Maths",
-        "English literature"
+        "Physics",
+        "Physics",
+        "Clubs",
+        "Clubs",
+        "Chemistry",
+        "Chemistry",
+        "Chemistry"
       ],
       "Thursday": [
         "Maths",
-        "English literature"
+        "Maths",
+        "Scripture/LS",
+        "English",
+        "Chemistry",
+        "Physics",
+        "Elective",
+        "Elective"
       ],
       "Friday": [
         "Maths",
-        "English literature"
+        "Maths",
+        "Chemistry",
+        "English",
+        "English",
+        "Physics",
+        "Elective",
+        "Elective"
       ]
     },
     "links" : {
       "The morning assembly" : "https://us02web.zoom.us/j/89191025953",
-      "Scripture" : "https://us02web.zoom.us/j/83602214250?pwd=dFprOFVNT1hqY0V1MXFnMGRzK2JXdz09",
+      "Scripture/LS" : {
+        "Scripture": "https://us02web.zoom.us/j/83602214250?pwd=dFprOFVNT1hqY0V1MXFnMGRzK2JXdz09",
+        "Life skills": "https://us02web.zoom.us/j/83602214250?pwd=dFprOFVNT1hqY0V1MXFnMGRzK2JXdz09"
+      },
       "Elective" :  {
         "Electronics" : "https://us02web.zoom.us/j/5617287072?pwd=OFVUTHJySWRTVnhqZ2NkQVVhNDJQUT09",
         "Computer science" : "https://us02web.zoom.us/j/82276435365?pwd=bm5WOUNGOEdlVDRZUEFUbTVMWWxaQT09",
@@ -34,21 +67,69 @@
     },
     "timings": [
       {
-        "periodIndex" : 0,
+        "name": "The morning assembly",
         "startTime": "08:00",
-        "endTime": "09:30",
+        "endTime": "08:40",
+        "isSubject": false 
+      },
+      {
+        "periodIndex" : 0,
+        "startTime": "08:40",
+        "endTime": "09:20",
         "isSubject": true
       },
       {
-        "name": "Break",
-        "startTime": "09:30",
-        "endTime": "09:45",
+        "periodIndex" : 1,
+        "startTime": "09:20",
+        "endTime": "10:00",
+        "isSubject": true
+      },
+      {
+        "name": "Short Break",
+        "startTime": "10:00",
+        "endTime": "10:15",
         "isSubject": false
       },
       {
-        "periodIndex" : 1,
-        "startTime": "09:45",
-        "endTime": "11:15",
+        "periodIndex" : 2,
+        "startTime": "10:15",
+        "endTime": "10:55",
+        "isSubject": true
+      },
+      {
+        "periodIndex" : 3,
+        "startTime": "10:55",
+        "endTime": "11:35",
+        "isSubject": true
+      },
+      {
+        "periodIndex" : 4,
+        "startTime": "11:35",
+        "endTime": "12:15",
+        "isSubject": true
+      },
+      {
+        "name": "Lunch break",
+        "startTime": "12:15",
+        "endTime": "12:45",
+        "isSubject": false
+      },
+      {
+        "periodIndex" : 5,
+        "startTime": "12:45",
+        "endTime": "13:25",
+        "isSubject": true
+      },
+      {
+        "periodIndex" : 6,
+        "startTime": "13:25",
+        "endTime": "13:55",
+        "isSubject": true
+      },
+      {
+        "periodIndex" : 7,
+        "startTime": "13:55",
+        "endTime": "14:35",
         "isSubject": true
       }
     ]

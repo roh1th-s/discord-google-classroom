@@ -25,14 +25,18 @@ class NextPeriod implements ICommand{
 
 		if (success) {
 			period = <Period>period;
-			//if the link field is an object (not a string), then it's elective
-			const isElective = typeof(period.link) != "string";
+			//if the link field is an object (not a string), then it has multiple links
+			const hasMultipleLinks = typeof(period.link) != "string";
 			let linkInfo = `[Click to join](${period.link})`;
 
-			if (isElective) {
+			if (hasMultipleLinks) {
 				linkInfo = ""
 				for (let subject in <object>period.link) {
-					linkInfo += `[${subject}](${(period.link as any)[subject]})\n`
+					let link = <string>(period.link as any)[subject];
+
+					if (link && link != "") {
+						linkInfo += `[${subject}](${link})\n`
+					}
 				}
 			}
 
@@ -41,7 +45,7 @@ class NextPeriod implements ICommand{
 				`Start time : \`${period.startTime}\`\tEnd time : \`${period.endTime}\``,	
 			)
 			if (period.link != "")
-				periodEmbed.addField(`Link${isElective ? "s" : ""}`, linkInfo)
+				periodEmbed.addField(`Link${hasMultipleLinks ? "s" : ""}`, linkInfo)
 
 			msg.channel.send(periodEmbed);
 		} else {
