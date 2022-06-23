@@ -8,7 +8,7 @@
     "dev": "ts-node-dev src",
     "lint": "eslint src --ext .ts",
     "start": "node dist/index",
-    "deploy" : "cat deploy.config.json > config.json && mv .gitignore gitignore && railway up && mv gitignore .gitignore && cat test.config.json > config.json"
+    "deploy" : ".\\scripts\\deploy"
   },
   "repository": {
     "type": "git",

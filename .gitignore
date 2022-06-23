@@ -1,12 +1,20 @@
-node_modules
+# node-modules
+/node_modules
+
+/dist
+/deploy
+
+# config files
 config.json
 test.config.json
 deploy.config.json
+
 token.json
 db.json
+
+# IDE config
 .vscode
 .idea
 .DS_Store
-/dist
-/scripts
+
 notes.txt
