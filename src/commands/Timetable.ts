@@ -19,8 +19,6 @@ class Timetable implements ICommand {
 
   async execute(ctx: CommandContext) {
     const msg = ctx.msg;
-		const prefix = ctx.prefix;
-    const correctUsage = `\`${prefix}${this.usage}\``;
 
     return msg.reply(
       simpleEmbed("12 Science Class timetable")

@@ -23,13 +23,8 @@ class SetChannel implements ICommand {
 
   async execute(ctx: CommandContext) {
     const msg = ctx.msg;
-		const prefix = ctx.prefix;
 		const args = ctx.args;
-    const correctUsage = `\`${prefix}${this.usage}\``;
 
-    console.log(CONFIG_PATH);
-    
-    
     if (args.length) {
       const channel = msg.mentions.channels.first();
 

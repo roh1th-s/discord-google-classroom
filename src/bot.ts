@@ -49,10 +49,10 @@ const startBot = async (classroom: IClassroom) => {
 
     let noOfPolls = 0;
 
-    /* setInterval(async () => {
+    setInterval(async () => {
       if (!cfg.bot.channel) return;
       check(bot.client, classroom, cfg, ++noOfPolls);
-    }, cfg.bot.checkInterval * 1000); */
+    }, cfg.bot.checkInterval * 1000);
   });
 
   bot.client.on("message", async (msg) => {

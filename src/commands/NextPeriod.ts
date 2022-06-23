@@ -16,10 +16,7 @@ class NextPeriod implements ICommand{
 
 	async execute(ctx : CommandContext) {
 		const msg = ctx.msg;
-		const prefix = ctx.prefix;
 		const cfg = ctx.cfg;
-		const args = ctx.args;
-		const correctUsage = `\`${prefix}${this.usage}\``;
 
 		let [success, period] = getPeriod(cfg.bot.timezone, true)
 

@@ -31,7 +31,7 @@ function getPeriodFromTiming(timing: Period, subjectsForDay: string[]): Period {
   ) {
     let subjectName = subjectsForDay[timing.periodIndex];
     name = subjectName;
-    link = links[subjectName] || links.common;
+    link = links[subjectName] || links.Common;
   }
 
   return {
@@ -41,6 +41,10 @@ function getPeriodFromTiming(timing: Period, subjectsForDay: string[]): Period {
     link,
     isSubject: timing.isSubject,
   };
+}
+
+export function getLinks() : object {
+  return links;
 }
 
 export function getPeriod(

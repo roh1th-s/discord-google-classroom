@@ -23,9 +23,7 @@ class SetPingRole implements ICommand {
 
 	async execute(ctx : CommandContext) {
 		const msg = ctx.msg;
-		const prefix = ctx.prefix;
 		const args = ctx.args;
-		const correctUsage = `\`${prefix}${this.usage}\``;
 
         if (args.length) {
 			const role = msg.mentions.roles.first();

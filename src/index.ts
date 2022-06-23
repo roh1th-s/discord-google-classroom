@@ -53,3 +53,7 @@ const run = async () => {
 };
 
 run();
+
+//TODO: use an external database like redis
+//TODO: make it possible to update timetable without restarting bot
+//TODO: enable google classroom notifications
