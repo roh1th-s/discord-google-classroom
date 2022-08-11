@@ -4,7 +4,7 @@
         "Maths",
         "Chemistry",
         "Physics",
-        "English",
+        "English literature",
         "P.E",
         "Elective",
         "Elective",
@@ -15,7 +15,7 @@
         "Maths",
         "Chemistry",
         "Chemistry",
-        "English",
+        "English literature",
         "Physics",
         "Physics",
         "Physics"
@@ -33,8 +33,8 @@
       "Thursday": [
         "Maths",
         "Maths",
-        "Scripture/LS",
-        "English",
+        "Scripture/V.Ed",
+        "English language",
         "Chemistry",
         "Physics",
         "Elective",
@@ -44,8 +44,8 @@
         "Maths",
         "Maths",
         "Chemistry",
-        "English",
-        "English",
+        "English literature",
+        "English language",
         "Physics",
         "Elective",
         "Elective"
@@ -53,17 +53,17 @@
     },
     "links" : {
       "The morning assembly" : "https://us02web.zoom.us/j/89191025953",
-      "Scripture/LS" : {
-        "Scripture": "https://us02web.zoom.us/j/7464883036?pwd=WXhFWEp5WlFBa0RZUVVUQlpDWmlqQT09",
-        "Life skills": "https://us02web.zoom.us/j/7464883036?pwd=WXhFWEp5WlFBa0RZUVVUQlpDWmlqQT09"
+      "Scripture/V.Ed" : {
+        "Scripture": "https://us02web.zoom.us/j/7060059831?pwd=MVRJS2dYTE5hQVZRSWhmZ3FIY3Jsdz09",
+        "Value Education": "https://us02web.zoom.us/j/4060591875?pwd=Y0xVdXpIWERrOGEyQ0FPOHIvWHM1QT09"
       },
       "Elective" :  {
         "Electronics" : "https://us02web.zoom.us/j/5617287072?pwd=OFVUTHJySWRTVnhqZ2NkQVVhNDJQUT09",
         "Computer science" : "https://us02web.zoom.us/j/82276435365?pwd=bm5WOUNGOEdlVDRZUEFUbTVMWWxaQT09",
         "Biology" : "https://us02web.zoom.us/j/3648524761?pwd=elZxRXF1dmhDNTE4R0FMT3ErN2Nadz09",
-        "Psychology" : "https://us02web.zoom.us/j/84571715616?pwd=TDF2NGxTWmhPeDhad3dwb2JNNmZzdz09"
+        "Psychology" : "https://us02web.zoom.us/j/5634861532?pwd=S1I4NlhXQWNEQmVWdVNhaERTb3MrQT09"
       },
-      "Common" : "https://us02web.zoom.us/j/7464883036?pwd=WXhFWEp5WlFBa0RZUVVUQlpDWmlqQT09"
+      "Common" : "https://us02web.zoom.us/j/7060059831?pwd=MVRJS2dYTE5hQVZRSWhmZ3FIY3Jsdz09"
     },
     "timings": [
       {

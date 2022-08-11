@@ -23,7 +23,7 @@ class Timetable implements ICommand {
     return msg.reply(
       simpleEmbed("12 Science Class timetable")
       .setImage(
-        "https://media.discordapp.net/attachments/918949804967620718/988389113554161704/unknown.png"
+        "https://cdn.discordapp.com/attachments/836606519998152704/1003719954975178812/unknown.png"
       )
       .setTimestamp()
     );
