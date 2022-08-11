@@ -29,16 +29,18 @@ class SetChannel implements ICommand {
       const channel = msg.mentions.channels.first();
 
       if (channel) {
-        try {
+        //TODO: persist this data
+        
+        /* try {
           let rawData = fs.readFileSync(CONFIG_PATH, { encoding: "utf8" });
           ctx.cfg.bot = JSON.parse(rawData).bot;
         } catch (err) {
           console.error(err);
-        }
+        } */
 
         ctx.cfg.bot.channel = channel.id;
 
-        fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4));
+        /* fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4)); */
 
         return msg.reply(successEmbed("Settings updated",`<#${channel.id}> set as google classroom channel.`));
       } else {

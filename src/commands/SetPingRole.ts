@@ -29,16 +29,18 @@ class SetPingRole implements ICommand {
 			const role = msg.mentions.roles.first();
 	
 			if (role) {
-			  try {
+			  //TODO : Persist this data
+			  
+			  /* try {
 				let rawData = fs.readFileSync(CONFIG_PATH, { encoding: "utf8" });
 				ctx.cfg = JSON.parse(rawData);
 			  } catch (err) {
 				console.error(err);
-			  }
+			  } */
 	
 			  ctx.cfg.bot.pingRole = role.id;
 	
-			  fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4));
+			  //fs.writeFileSync(CONFIG_PATH, JSON.stringify(ctx.cfg, null, 4));
 			  
 			  return msg.reply(successEmbed("Settings updated",`<@&${role.id}> will be pinged for updates.`));
 			}
