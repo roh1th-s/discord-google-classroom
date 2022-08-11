@@ -7,8 +7,7 @@
     "build": "rm -rf dist && tsc",
     "dev": "ts-node-dev src",
     "lint": "eslint src --ext .ts",
-    "start": "node dist/index",
-    "deploy": ".\\scripts\\deploy heroku"
+    "start": "node dist/index"
   },
   "repository": {
     "type": "git",
