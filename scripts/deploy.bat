@@ -19,6 +19,7 @@ copy token.json deploy\token.json > nul
 copy package.json deploy\package.json > nul
 copy package-lock.json deploy\package-lock.json > nul
 copy tsconfig.json deploy\tsconfig.json > nul
+copy Procfile deploy\Procfile > nul
 
 echo Created deploy folder. Starting deploy now, do not delete it.
 
@@ -37,6 +38,8 @@ railway up
 		
 		git init
 		heroku git:remote -a google-classroom-bot-1
+		
+		git pull heroku master
 		
 		git add .
 		git commit -am "make it better"

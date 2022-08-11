@@ -3,10 +3,6 @@ import * as path from 'path';
 
 import express from 'express';
 
-if (!fs.existsSync("./config.json")) {
-  fs.writeFileSync("./config.json", fs.readFileSync("./config.example.json"))
-}
-
 import config from './config';
 import Classroom from './lib/Classroom';
 import startBot from './bot';

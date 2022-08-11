@@ -12,6 +12,9 @@ deploy.config.json
 token.json
 db.json
 
+# Sensitive variables
+.env
+
 # IDE config
 .vscode
 .idea

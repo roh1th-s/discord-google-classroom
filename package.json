@@ -8,7 +8,7 @@
     "dev": "ts-node-dev src",
     "lint": "eslint src --ext .ts",
     "start": "node dist/index",
-    "deploy" : ".\\scripts\\deploy"
+    "deploy": ".\\scripts\\deploy heroku"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/xXRSTCXx/discord-google-classroom#readme",
   "dependencies": {
     "discord.js": "^12.3.1",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "googleapis": "^85.0.0",
     "inquirer": "^7.3.3"
