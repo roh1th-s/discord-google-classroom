@@ -65,6 +65,17 @@ const run = async () => {
     server.close();
     console.log("Server stopped.");
   }
+
+  if (process.env.RENDER) { // if deployed on render.com
+    const keepAliveApp = express();
+
+    keepAliveApp.get("/", (req, res) => {
+      res.send("I'm alive :)");
+    })
+    keepAliveApp.listen(PORT, async () => {
+      console.log(`Started Express server on port ${PORT}.`);
+    });
+  }
 };
 
 run();
